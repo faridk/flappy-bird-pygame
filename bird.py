@@ -1,4 +1,4 @@
-import sys, pygame, random, time
+import sys, pygame, random
 
 pygame.init()
 pygame.font.init()
@@ -19,7 +19,6 @@ class Game:
 		self.background_x = 0
 		self.speed = 5
 		self.game_over = False
-		time.sleep(10)
 
 	def generate_pipes(self, count):
 		if (len(self.pipes) == 0):
@@ -93,7 +92,7 @@ class Game:
 				screen.blit(game_over_label, (WIDTH // 2 - 250, HEIGHT // 2))
 
 
-class Bird:	
+class Bird:
 	scale = 5
 	width = 18 * scale
 	height = 11 * scale
@@ -123,6 +122,7 @@ class Bird:
 			screen.blit(self.image, (self.x, self.y))
 			# pygame.draw.rect(screen, (255, 0, 0), (self.x, self.y, self.width, self.height))
 
+
 class Pipe:
 	scale = 7
 	width = 15 * scale
@@ -142,8 +142,6 @@ class Pipe:
 		self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
 		# Draw a pipe
 		screen.blit(self.image, (self.x, self.y))
-
-
 
 
 black = (0, 0, 0)
